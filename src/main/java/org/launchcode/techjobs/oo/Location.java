@@ -2,7 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Location {
+/*public class Location {
 
     private int id;
     private static int nextId = 1;
@@ -52,6 +52,11 @@ public class Location {
 
     public void setValue(String value) {
         this.value = value;
+    }*/
+public class Location extends JobField {
+    public Location(String value) {
+        super(value);
     }
+    // You can add any specific methods for the Location class here, if needed.
 
 }

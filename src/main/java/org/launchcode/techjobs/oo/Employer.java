@@ -2,7 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Employer {
+/*public class Employer {
 
     private int id;
     private static int nextId = 1;
@@ -50,6 +50,14 @@ public class Employer {
 
     public void setValue(String value) {
         this.value = value;
+    }*/
+public class Employer extends JobField {
+    // No need to duplicate fields, constructors, getters, setters, or custom methods.
+    // They are inherited from the JobField class.
+
+    public Employer(String value) {
+        super(value);
     }
 
+    // You can add any specific methods for the Employer class here, if needed.
 }

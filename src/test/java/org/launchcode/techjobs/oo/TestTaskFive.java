@@ -17,7 +17,6 @@ import static org.junit.Assert.fail;
  * Created by LaunchCode
  */
 public class TestTaskFive extends AbstractTest {
-
     @Mocked Job job;
 
     @Test
@@ -31,7 +30,6 @@ public class TestTaskFive extends AbstractTest {
             fail("JobTest does not have a testToStringStartsAndEndsWithNewLine method");
         }
     }
-
 
     @Test
     public void testToStringStartsAndEndsWithNewLine() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
