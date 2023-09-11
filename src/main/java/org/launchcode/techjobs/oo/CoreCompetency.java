@@ -33,10 +33,26 @@ public class CoreCompetency {
         return id == that.id;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    public String getValue() {
+        return value;
+    }
+
+    /* public void setValue(String value) {
+        this.value = value;
+    }*/
 
     // TODO: Use the "Generate" tool to add a getter and setter for the 'value' field but
     //  ONLY a getter for the 'id' field.
