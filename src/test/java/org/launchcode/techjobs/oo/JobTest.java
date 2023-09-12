@@ -36,19 +36,11 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job job = createJob("Web Developer", "LaunchCode", "StL", "Back-end developer", "Java");
-        String jobString = job.toString();
-
-        // Get the actual line separator character
-        String lineSeparator = System.lineSeparator();
-
-        // Test that the first and last characters of jobString are the same as the line separator
-        assertEquals(jobString.substring(0, lineSeparator.length()), lineSeparator);
-        assertEquals(jobString.substring(jobString.length() - lineSeparator.length()), lineSeparator);
+        String firstChar = String.valueOf(job.toString().charAt(0));
+        String lastChar = String.valueOf(job.toString().charAt(job.toString().length() - 1));
+        assertEquals(firstChar, "\n");
+        assertEquals(lastChar, "\n");
     }
-
-
-
-
     // Define a helper method to create a Job object with the given parameters
     private Job createJob(String name, String employer, String location, String positionType, String coreCompetency) {
         return new Job(name, new Employer(employer), new Location(location), new PositionType(positionType), new CoreCompetency(coreCompetency));
@@ -81,7 +73,18 @@ public class JobTest {
         assertTrue(jobString.contains("Position Type: Quality control"));
         assertTrue(jobString.contains("Core Competency: Persistence"));
     }
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job emptyJob = new Job();
+        String expectedOutput = "\nID: 5\nName: Data Not Available\nEmployer: Data Not Available\nLocation: Data Not Available\nPosition Type: Data Not Available\nCore Competency: Data Not Available\n";
+        assertEquals(expectedOutput, emptyJob.toString());
+    }
+    @Test
+    public void testSettingId() {
+        Job job1 = new Job();
+        Job job2 = new Job();
+        assertNotEquals(job1.getId(), job2.getId());
+    }
 
 
 }
-
